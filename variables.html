@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variables</title>
+    <script>
+      //Sample JavaScript function.
+      function showname() {
+        //Store text from txtfname textbox in fname variable.
+        var fname = document.getElementById("txtfname").value;
+        //Create a message from literal text and fname variable.
+        var msg = "Hello there " + fname + "!";
+        //Open a new browser window (or tab)
+        var newWindow = window.open('','newWindow','width=300,height=200');
+        //In the new window, put the msg variable text in h1 tags.
+        newWindow.document.write("<h1>" + msg + "</h1>");
+        //Add tags to close the new window.
+        newWindow.document.write("<a href='' onclick='window.close()'>Close</a>")
+        //Make sure new window has the focus (isn't covered by something else).
+        newWindow.focus(); 
+    }
+</script>
+</head>
+<body>
+    <label for="txtfname">Type your first name: </label>
+    <input type="text" id="txtfname"><br>
+    <input type="button" value="Click me" onclick="showname()">
+    <!-- Use JavaScript to put cursor in the textbox -->
+    <script>
+      document.getElementById("txtfname").focus()
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>daily1.2</title>
+</head>
+
+<body>
+	<script>
+		var Google = 400.00;
+		var Amazon = 380.00;
+		var Facebook = 350.00;
+		var Hour = 60;
+		var FBSub = Facebook * Hour;
+		var FBTotal = FBSub * 10;
+		document.write("facebook=<br/>")
+		document.write(FBTotal.toFixed(2));
+		var GogSub = Google * Hour;
+		var GogTotal = GogSub * 6;
+		document.write("<br/>Google=<br/>");
+		document.write(GogTotal);
+		var AmSub = Amazon * Hour;
+		var AmTotal = AmSub * 4;
+		document.write("<br/>Amazon=<br/>");
+		document.write(AmTotal);
+		document.write("<br/>Total<br>");
+		document.write(AmTotal+GogTotal+FBTotal);
+	</script>
+</body>
+</html>

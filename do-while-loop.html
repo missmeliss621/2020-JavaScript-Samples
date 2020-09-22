@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DO While loop</title>
+</head>
+<body>
+<!-- JavaScript that executes as soon as page opens. -->
+<script>
+  do {
+  //Ask user to type their name.
+    var fname = prompt("Please type your name", "");
+  //Keep asking if they try to leave it empty.
+  } while (fname == null || fname.length < 1)
+//Say hello on the page.
+document.write("Hello " + fname);
+</script>
+</body>
+</html>

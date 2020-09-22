@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accordion</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        });
+    </script>
+    <style>
+        /* Container for all terms and definitions */
+        .accordion {
+            background-color: #eef;
+            width: 400px;
+            margin: 1em auto;
+            border: solid 1px #555;
+            border-radius: 5px;
+            font-family: Verdana, Tahoma, Sans-Serif;
+        }
+        /* term box contains the term to be defined */
+        .term {
+            padding: 8px 48px 8px 4px;
+            background: url(pix3/tinyArrow.png) no-repeat 98% center;
+            border: solid 1px white;
+            border-radius: 5px;
+            font-size:1.1em;
+        }
+        /* Paragraph contains the definition. */
+        .accordion p {
+            margin: 0;
+            padding: 0.5em;
+            background-color: white;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Start accordion -->
+    <div class="accordion">
+        <!-- The short text goes in the term div -->
+        <div class="term">
+            Term to define here
+        </div><!-- End term -->
+        <!-- The definition or longer text goes in the next paragraph -->
+        <p>Definition here.</p>
+        <!-- The short text goes in the term div -->
+        <div class="term">
+            Term to define here
+        </div><!-- End term -->
+        <!-- The definition or longer text goes in the next paragraph -->
+        <p>Definition here.</p>
+    </div><!-- End accordion -->
+</body>
+</html>

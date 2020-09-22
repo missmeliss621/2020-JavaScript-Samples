@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive If</title>
+<script>
+    //Show the fare when called.
+    function showfare(){
+        //Get the fare from the txtAge textbox.
+        var age = document.getElementById("txtAge").value
+        //Create an empty string variable named msg (short for message).
+        var msg = ""
+        // If they didn't enter a number (is Not a Number), ask for a number.
+        if (isNaN(age)) {
+            msg="Please enter a number"
+        }
+        //If have is less than or equal to 12, child fare.
+        else if (age <= 12) {
+            msg="Child fare"
+        }
+        //Age 13 to 59 is adult fare.
+        else if (age > 12 && age < 60) {
+            msg="Adult fare"
+        //Must be 60 or more if none of above are true.
+        } else {
+            msg="Senior discount"
+        }
+        //Put the msg text inside the paragraph named fare, using the innerHTML property.
+        document.getElementById("fare").innerHTML=msg
+    }
+</script>
+</head>
+<body>
+    <!-- Ask for age -->
+    Type your age:
+    <input type="text" id="txtAge" style="width:25px" autofocus>
+    then click Go
+    <button onclick="showfare()">Go</button>
+    <!-- Empty paragraph named fare will get content from JavaScript -->
+    <p id="fare"></p>
+</body>
+</html>

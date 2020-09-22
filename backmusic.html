@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script>
+    // This code runs as soon as page opens.
+    //If browser supports HTML5 audio set up sound.
+    if (window.HTMLAudioElement) {
+      var player = document.createElement('audio');
+      // Choose sound file to play based on browser capabilities.
+      if (player.canPlayType('audio/mpeg').length > 0) {
+        player.setAttribute('src', 'sounds/landofpeace.mp3');
+      }
+      if (player.canPlayType('audio/ogg; codecs="vorbis"').length > 0) {
+        player.setAttribute('src', 'sounds/landofpeace.ogg');
+      }
+      // Sets the loop attribute so music plays continuously.
+      player.setAttribute('loop', true);
+    }
+    //Play and pause the player.
+    function stopgo(btn) {
+      //Play or pause and change button text depending on current state.
+      if (btn.value == "Pause") {
+        player.pause()
+        btn.value = "Play"
+      } else {
+        player.play()
+        btn.value = "Pause"
+      }
+    }
+    //Adjust the player volume.
+    function volume(amt) {
+      //Adjust the volume
+      player.volume = amt
+    }
+  </script>
+</head>
+<body>
+  <p id="soundcontrols">Background Music: &nbsp; 
+    <!-- Show a Pause button -->
+    <input type="button" id="playpause" value="Pause" style="width: 60px" onclick="stopgo(this)">
+    <!-- Show an HTML5 range control for volume -->
+    <input type="range" min="0" max="100" onchange="volume(this.value/100)" title="Volume">
+  </p>
+  <script>
+    //Runs at end of page load, after everything else is rendered.
+    //Prevents sound and controls in incompatible browsers.
+    //See if browser supports range control      
+    var temp = document.createElement("input");
+    temp.setAttribute("type", "range");
+    //supportsrange will be true if browser supports the range control.
+    var supportsrange = (temp.type == "range");
+    // Show sound controls only in browsers that play sound and support range control.
+    if (supportsrange && window.HTMLAudioElement) {
+      player.play()      
+    } else {
+      document.getElementById("soundcontrols").style.display = "none";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Cycle</title>
+  <script>
+    //Changes the background color of box on each click.
+    function changecolor(ctrl) {
+      //Get the current background color and store in variable.
+      var color = ctrl.style.backgroundColor;
+      //If it's nothing or red, make it green.
+      if (color == '' || color == "red") {
+        ctrl.style.backgroundColor = "green"
+      }
+      //If it was green, make it red.
+      if (color == "green") {
+        ctrl.style.backgroundColor = "blue"
+      }
+	 if (color == "blue") {
+		 ctrl.style.backgroundColor = "red"
+	 }
+    }
+  </script>
+  <style>
+    /* Style the box */
+    #sample {
+      width: 100px;
+      height: 100px;
+      border: solid 1px black;
+      background-color: Red;
+    }
+  </style>
+</head>
+<body>
+  <!-- Show the box and handle click event -->
+  <div id="sample" onclick="changecolor(this)">
+  </div>
+</body>
+</html>

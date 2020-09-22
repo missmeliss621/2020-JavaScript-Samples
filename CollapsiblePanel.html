@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collapsible Panel</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        //jQuery code.
+        $(document).ready(function () {
+            //User clicked top of a collapsible panel.
+            $('.cPanel .top').click(function () {
+                //Switch between the two background images.
+                $(this).toggleClass('collapse expand');
+                //Slide the panel up or down.
+                $(this).next('.slidepanel').slideToggle('slow');
+            });
+        });
+    </script>
+    <style>
+        /* Style for the entire collapsible panel */
+        .cPanel {
+            background-color: #eef;
+            width: 80%;
+            margin: 1em auto;
+            border: solid 2px #777;
+            border-radius: 5px;
+            font-family: Verdana, Tahoma, Sans-Serif;
+        }
+        /* Style for the top bar */
+        .top {
+            padding: 8px 48px 8px 4px;
+            border: solid 1px white;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        /* Shows collapse button */
+        .collapse {
+            background: url(pix3/collapse.png) no-repeat 98% center;
+        }
+        /* Shows expand button */
+        .expand {
+            background: url(pix3/expand.png) no-repeat 98% center;
+        }
+        /* Style for panel that drops down.*/
+        .cPanel .slidepanel {
+            margin: 0;
+            padding: 1em;
+            background-color: white;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cPanel">
+        <!-- Text for the top bar goes in this first div -->
+        <div class="top expand">
+            This is where the visible text goes.
+        </div><!-- End top -->
+        <!-- The slide-down text goes in this second div -->
+        <div class="slidepanel">
+            <p>This is where the drop-down text goes.</p>
+        </div><!-- End slidepanel -->
+    </div><!-- End cpanel -->
+</body>
+</html>

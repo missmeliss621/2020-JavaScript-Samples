@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script>
+    //Code that's executed as soon as the page opens.
+    //Line below eliminates need for <audio>...</audio> tags.
+    if (window.HTMLAudioElement) {
+      var player = document.createElement('audio');
+      var ext = ""
+    }
+    //Tries to play whatever name is pasted in.
+    function play(filename) {
+     if (window.HTMLAudioElement) {
+        // Currently canPlayType(type) returns: "", "maybe" or "probably" 
+        if (player.canPlayType('audio/mpeg').length > 0) {
+          ext = "mp3"
+        }
+        if (player.canPlayType('audio/ogg; codecs="vorbis"').length > 0) {
+          ext = "ogg"
+        }
+        //Stop what's playing now. 
+        player.pause();
+        //Set src= attribute to desired sound filename. 
+        player.setAttribute('src', 'sounds/' + filename + "." + ext);
+        //Play the sound. 
+        player.play();
+      } else {
+        //Incompatible browsers get an alert.
+        alert("Sorry, your browser can't preview HTML5 audio")
+      }
+    }
+  </script>
+  <style>
+    .downloads {
+      border-collapse: collapse;
+    }
+    .downloads tr:hover {
+      background-color: yellow;
+    }
+    .downloads td {
+      vertical-align: middle;
+      border: solid 1px silver;
+      padding: 8px;
+      cursor: pointer;
+    }
+    .downloads td img {
+      padding-right: 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <p>Click a name or speaker to hear the sound. To download, right-click the MP3 or ogg link and choose Save Target As or Download
+    Linked File, or whatever you normally use in your browser to download files.</p>
+  <table class="downloads">
+    <tr>
+      <td onclick="play('alien')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Alien</td>
+      <td><a href="sounds/alien.mp3" download="alien.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/alien.ogg" download="alien.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('canary')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Canary</td>
+      <td><a href="sounds/canary.mp3" download="canary.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/canary.ogg" download="canary.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('chickens')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Chickens</td>
+      <td><a href="sounds/chickens.mp3" download="chickens.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/chickens.ogg" download="chickens.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('crow')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Crow</td>
+      <td><a href="sounds/crow.mp3" download="crow.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/crow.ogg" download="crow.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('duck')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Duck</td>
+      <td><a href="sounds/duck.mp3" download="duck.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/duck.ogg" download="duck.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('effect1')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Effect1</td>
+      <td><a href="sounds/effect1.mp3" download="effect1.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/effect1.ogg" download="effect1.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('effect2')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Effect2</td>
+      <td><a href="sounds/effect2.mp3" download="effect2.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/effect2.ogg" download="effect2.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('raygun')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Raygun</td>
+      <td><a href="sounds/raygun.mp3" download="raygun.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/raygun.ogg" download="raygun.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('sputnik')"><img src="sounds/speakericon.png" title="Play" alt="Play" />Sputnik</td>
+      <td><a href="sounds/sputnik.mp3" download="sputnik.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/sputnik.ogg" download="sputnik.ogg" title="Download">ogg</a></td>
+    </tr>
+    <tr>
+      <td onclick="play('tiger')">
+        <img src="sounds/speakericon.png" title="Play" alt="Play" />Tiger</td>
+      <td><a href="sounds/tiger.mp3" download="tiger.mp3" title="Download">mp3</a></td>
+      <td><a href="sounds/tiger.ogg" download="tiger.ogg" title="Download">ogg</a></td>
+    </tr>
+  </table>
+</body>
+</html>

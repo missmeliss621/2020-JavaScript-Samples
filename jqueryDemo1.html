@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>jQueryDemo1</title>
+
+<style>
+  /* Applies to all divs on this page */
+  div {
+   width: 100px;
+   height: 100px;
+   border: solid 1px black;
+   margin: 10px;
+   float: left;
+  }
+ </style>
+ <!-- Load jQuery 1.9.1 minified from Google CDN -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+ </script>
+ <script>
+  $(document).ready(function () {
+   // jQuery code to execute on any button click
+   $("button").click(function () {
+    $("div").fadeToggle();
+   });
+  });
+ </script>
+</head>
+<body>
+ <button>
+  Click Me</button><br>
+ <div style="background-color: red">
+ </div>
+ <div style="background-color: blue">
+ </div>
+ <div style="background-color: green">
+ </div>
+ <div style="background-color: yellow">
+ </div>
+</body>
+</html>

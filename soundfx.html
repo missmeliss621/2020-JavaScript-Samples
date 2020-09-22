@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>soundfx.htm</title>
+  <script>
+    // This code runs when page first opens.
+    // If the browser support HTML5 audio, it creates a player.
+    if (window.HTMLAudioElement) {
+      var player = document.createElement('audio');
+      // Choose sound file to play based on browser capabilities.
+      if (player.canPlayType('audio/mpeg').length > 0) {
+        player.setAttribute('src', 'sounds/whoosh.mp3');
+      }
+      if (player.canPlayType('audio/ogg; codecs="vorbis"').length > 0) {
+        player.setAttribute('src', 'sounds/whoosh.ogg');
+      }
+    }
+    //This function only runs when called. It plays the 
+    //sound file in the player, if the player exists.
+    function playsound() {
+      if (window.player) {
+        player.play();
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="playsound()">Sample</button>
+</body>
+</html>

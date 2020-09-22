@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Samples</title>
+</head>
+<body>
+    Your screen width is <script> document.write(screen.width);</script> pixels.<br>
+    Your screen height is <script> document.write(screen.height);</script> pixels.<br>
+    Your user agent is <script> document.write(navigator.appVersion);</script>.<br>
+    Your platform is <script> document.write(navigator.platform);</script>.<br>
+    Your page width is <script> document.write(window.innerWidth);</script> pixels.<br>
+    Your page height is <script> document.write(window.innerHeight);</script> pixels.<br>
+    This page was last modified on <script> document.write(document.lastModified);</script>.<br>
+    This page title is <script> document.write(document.title);</script>.<br>
+    This page URL is <script> document.write(location.href);</script>.<br>
+    <label for="username">Type your name:</label>
+    <input type="text" id="username"> then click
+    <input type="button" value="Go" onclick="alert('Hello ' + document.getElementById('username').value)" >
+    <p>
+    <button onclick = "window.close()">Close Me</button>
+    </p>
+    </body>
+</html>

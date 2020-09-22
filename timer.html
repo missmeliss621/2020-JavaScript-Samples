@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer</title>
+  <script>
+    //Set timing interval to global variable name.
+    var clock = setInterval("showtime()", 1000);
+    //Function to display current time on the page.
+    function showtime() {
+      var now = new Date();
+      var time = now.toLocaleTimeString();
+      document.getElementById("ptime").innerHTML = time;
+    }       
+  </script>
+</head>
+<body>
+  <!-- Paragraph with and ID to show the time -->
+  <p id="ptime"></p>
+</body>
+</html>
